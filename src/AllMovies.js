@@ -3,8 +3,9 @@ import './AllMovies.css'
 
 const AllMovies = (props) => {
   const movies = props.movies.map(movie => {
+    console.log('movie:', movie)
     return (
-        <h2 className="font">{movie.title}</h2>
+        <h2 className="font" key={movie.id} onClick={props.onClick(movie.id)}>{movie.title}</h2>
     )
   })
   return (
@@ -12,7 +13,6 @@ const AllMovies = (props) => {
           {movies}
         </div>
       )
-
 }
 
 export default AllMovies
