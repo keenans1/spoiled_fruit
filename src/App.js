@@ -20,7 +20,7 @@ class App extends Component {
 
     return (
       <main>
-        <AllMovies />
+        <AllMovies movies={this.state.movies}/>
       </main>
     )
   }
@@ -32,4 +32,4 @@ export default App;
 
 // import the movies 
 // set the state
-// pass as prop to ALlMovies
+// pass as prop to AllMovies
