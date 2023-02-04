@@ -6,7 +6,18 @@
 
 /* this was here before */
 .App {
+  background: #2C3333;
   text-align: center;
+}
+
+.header {
+  background: #395B64 ;
+  color: #E7F6F2;
+  font-size: 36px;
+  height: 4vh;
+  margin: 0;
+  padding: 2%;
+  width: 100vw;
 }
 
 .App-logo {

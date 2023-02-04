@@ -38,7 +38,10 @@ class App extends Component {
   render() {
 
     return (
-      <main>
+      <main className='App'>
+        <header>
+          <h1 className='header'>Spoiled Fruit</h1>
+        </header>
 
         {
           this.state.isLoading && !this.state.errorMessage ? <h2>Loading icon here</h2> : null
