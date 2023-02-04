@@ -23,27 +23,3 @@ const AllMovies = (props) => {
 }
 
 export default AllMovies
-
-
-
-//<h2 className="font" key={movie.id} onClick={props.onClick(movie.id)}>{movie.title}</h2>
-
-// const Ideas = ({ideas}) => {
-
-//   const ideaCards = ideas.map(idea => {
-//     return (
-//       <Card
-//         title={idea.title}
-//         description={idea.description}
-//         id={idea.id}
-//         key={idea.id}
-//       />
-//     )
-//   })
-
-//   return (
-//     <div className='ideas-container'>
-//       {ideaCards}
-//     </div>
-//   )
-// }
