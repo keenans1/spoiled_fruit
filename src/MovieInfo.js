@@ -4,7 +4,7 @@ import './MovieInfo.css'
 const MovieInfo = () => {
   return (
     <div>
-      <h3>Keenan</h3>
+      <h3>Hi Keenan</h3>
     </div>
   )
 }
