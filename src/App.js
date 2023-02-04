@@ -57,7 +57,10 @@ class App extends Component {
         }
 
 
-        {this.state.movieClicked && <MovieInfo selectedMovie={this.state.selectedMovie} returnHome={this.returnHome}/>}
+        {this.state.movieClicked && 
+        <div className='info-container'>
+          <MovieInfo selectedMovie={this.state.selectedMovie} returnHome={this.returnHome}/>
+        </div>}
       </main>
     )
   }

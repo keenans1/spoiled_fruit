@@ -1,0 +1,29 @@
+.font {
+  color: #E7F6F2;
+  font-size: 16px;
+  margin: 0;
+}
+
+.single-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 35%
+}
+
+.movie-title {
+  font-size: 36px;
+  margin: 7% 0% 5% 0%;
+}
+
+.margin {
+  margin-bottom: 5%;
+}
+
+.button {
+  height: 5vh;
+  margin: 25% 0% 15% 0%;
+  width: 10vw;
+}
