@@ -4,12 +4,12 @@ import Movie from './Movie.js'
 
 const AllMovies = (props) => {
   const movies = props.movies.map(movie => {
-    console.log('movie:', movie)
     return (
       <Movie
         key={movie.id}
         onClick={props.onClick}
         movie={movie}
+        movieClicked={props.movieClicked}
       />
     )
   })

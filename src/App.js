@@ -2,13 +2,16 @@ import React, { Component } from 'react'
 import './App.css';
 import AllMovies from './AllMovies'
 import movieData from './movieData'
+import MovieInfo from './MovieInfo';
 
 class App extends Component {
 
   constructor() {
     super()
     this.state = {
-      movies: []
+      movies: [],
+      movieClicked: false,
+      selectedMovie: null
     }
   }
 
@@ -17,17 +20,20 @@ class App extends Component {
   }
 
   onClick = (id) => {
-    console.log('click is working', id)
-    // hide all movies except the only we clicked on
-    // maybe use find with the id parameter?
+    this.setState({movieClicked: true})
+
+    //another state property- selected movie
+    // fetch for individual movie based on id 
     // display (unhide?) movie info component
+    //render/return movieInfo comp that matches id of movie clicked
   }
 
   render() {
 
     return (
       <main>
-        <AllMovies movies={this.state.movies} onClick={this.onClick} />
+        <AllMovies movies={this.state.movies} onClick={this.onClick} movieClicked={this.state.movieClicked}/>
+        {this.state.movieClicked && <MovieInfo />}
       </main>
     )
   }
