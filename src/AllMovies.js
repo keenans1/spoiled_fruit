@@ -1,22 +1,31 @@
 import React from 'react'
 import './AllMovies.css'
+import Movie from './Movie.js'
 
 const AllMovies = (props) => {
   const movies = props.movies.map(movie => {
     console.log('movie:', movie)
     return (
-        <h2 className="font" key={movie.id} onClick={props.onClick(movie.id)}>{movie.title}</h2>
+      <Movie
+        className="font"
+        key={movie.id}
+        onClick={props.onClick(movie.id)}
+        movie={movie}
+      />
     )
   })
   return (
-        <div className='movies-container'>
-          {movies}
-        </div>
-      )
+    <div className='movies-container'>
+      {movies}
+    </div>
+  )
 }
 
 export default AllMovies
 
+
+
+//<h2 className="font" key={movie.id} onClick={props.onClick(movie.id)}>{movie.title}</h2>
 
 // const Ideas = ({ideas}) => {
 
