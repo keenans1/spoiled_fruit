@@ -18,6 +18,9 @@ class App extends Component {
 
   onClick = (id) => {
     console.log('click is working', id)
+    // hide all movies except the only we clicked on
+    // maybe use find with the id parameter?
+    // display (unhide?) movie info component
   }
 
   render() {
@@ -30,10 +33,4 @@ class App extends Component {
   }
 }
 
-
-
 export default App;
-
-// import the movies 
-// set the state
-// pass as prop to AllMovies
