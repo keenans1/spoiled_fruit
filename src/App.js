@@ -16,24 +16,21 @@ class App extends Component {
     this.setState({ movies: movieData })
   }
 
-  handleClick = (id) => {
-    console.log('hi', id)
+  onClick = (id) => {
+    console.log('click is working', id)
+    // hide all movies except the only we clicked on
+    // maybe use find with the id parameter?
+    // display (unhide?) movie info component
   }
 
   render() {
 
     return (
       <main>
-        <AllMovies movies={this.state.movies} onClick={this.handleClick}/>
+        <AllMovies movies={this.state.movies} onClick={this.onClick} />
       </main>
     )
   }
 }
 
-
-
 export default App;
-
-// import the movies 
-// set the state
-// pass as prop to AllMovies
