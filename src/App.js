@@ -16,11 +16,15 @@ class App extends Component {
     this.setState({ movies: movieData })
   }
 
+  handleClick = (id) => {
+    console.log('hi', id)
+  }
+
   render() {
 
     return (
       <main>
-        <AllMovies />
+        <AllMovies movies={this.state.movies} onClick={this.handleClick}/>
       </main>
     )
   }
@@ -32,4 +36,4 @@ export default App;
 
 // import the movies 
 // set the state
-// pass as prop to ALlMovies
+// pass as prop to AllMovies
