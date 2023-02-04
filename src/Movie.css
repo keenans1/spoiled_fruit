@@ -1,0 +1,17 @@
+img {
+    height: 200px;
+    width: 150px;
+}
+
+.font {
+    font-size: 12px;
+}
+
+.movie-container {
+    margin: 1% 5% 1% 5%;
+}
+
+.movie-container:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
