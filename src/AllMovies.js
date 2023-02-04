@@ -9,6 +9,7 @@ const AllMovies = (props) => {
         key={movie.id}
         onClick={props.onClick}
         movie={movie}
+        movieClicked={props.movieClicked}
       />
     )
   })

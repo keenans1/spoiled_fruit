@@ -8,7 +8,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      movies: []
+      movies: [],
+      movieClicked: false
     }
   }
 
@@ -17,10 +18,10 @@ class App extends Component {
   }
 
   onClick = (id) => {
-    console.log('click is working', id)
-    return (
-    <AllMovies add className="hidden"/>
-    )
+    this.setState({movieClicked: true})
+    // return (
+    // <AllMovies add className="hidden"/>
+    // )
     // hide all movies except the only we clicked on
     // maybe use find with the id parameter?
     // display (unhide?) movie info component
@@ -30,7 +31,7 @@ class App extends Component {
 
     return (
       <main>
-        <AllMovies movies={this.state.movies} onClick={this.onClick} />
+        <AllMovies movies={this.state.movies} onClick={this.onClick} movieClicked={this.state.movieClicked}/>
       </main>
     )
   }
