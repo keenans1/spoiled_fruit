@@ -16,15 +16,15 @@ class App extends Component {
     this.setState({ movies: movieData })
   }
 
-  handleClick = (id) => {
-    console.log('hi', id)
+  onClick = (id) => {
+    console.log('click is working', id)
   }
 
   render() {
 
     return (
       <main>
-        <AllMovies movies={this.state.movies} onClick={this.handleClick}/>
+        <AllMovies movies={this.state.movies} onClick={this.onClick} />
       </main>
     )
   }
