@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import './App.css';
 import AllMovies from './AllMovies'
-import movieData from './movieData'
-import MovieInfo from './MovieInfo';
+import MovieInfo from './MovieInfo'
 
 class App extends Component {
 
@@ -16,11 +15,20 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({ movies: movieData })
+
+
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+      .then(response => response.json())
+      .then(data => {
+        console.log('this is the movie data', data.movies)
+        this.setState({ movies: data.movies })
+      })
+
+
   }
 
   onClick = (id) => {
-    this.setState({movieClicked: true})
+    this.setState({ movieClicked: true })
 
     //another state property- selected movie
     // fetch for individual movie based on id 
@@ -32,7 +40,7 @@ class App extends Component {
 
     return (
       <main>
-        <AllMovies movies={this.state.movies} onClick={this.onClick} movieClicked={this.state.movieClicked}/>
+        <AllMovies movies={this.state.movies} onClick={this.onClick} movieClicked={this.state.movieClicked} />
         {this.state.movieClicked && <MovieInfo />}
       </main>
     )
@@ -40,3 +48,5 @@ class App extends Component {
 }
 
 export default App;
+
+//https://rancid-tomatillos.herokuapp.com/api/v2
