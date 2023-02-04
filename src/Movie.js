@@ -2,7 +2,6 @@ import React from 'react'
 import './Movie.css'
 
 const Movie = (props) => {
-    console.log('props', props)
     const display = props.movieClicked ? 'hidden' : 'movie-container'
     return (
         <div className={display} onClick={() => props.onClick(props.movie.id)}>
@@ -13,9 +12,3 @@ const Movie = (props) => {
 }
 
 export default Movie
-
-//onClick={() => deleteIdea(id)}
-
-
-//{props.onClick={() => }}
-// {props.movieClicked ? className='hidden' : className='movie-container'}
