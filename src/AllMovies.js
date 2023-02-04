@@ -7,13 +7,14 @@ const AllMovies = (props) => {
     console.log('movie:', movie)
     return (
       <Movie
-        className="font"
         key={movie.id}
-        onClick={props.onClick(movie.id)}
+        onClick={props.onClick}
         movie={movie}
       />
     )
   })
+
+
   return (
     <div className='movies-container'>
       {movies}
