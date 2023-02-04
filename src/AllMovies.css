@@ -2,6 +2,10 @@
   font-size: 12px;
 }
 
+.hidden {
+  display: none;
+}
+
 .movies-container {
   margin-left: 5%;
   display: flex;

@@ -18,6 +18,9 @@ class App extends Component {
 
   onClick = (id) => {
     console.log('click is working', id)
+    return (
+    <AllMovies add className="hidden"/>
+    )
     // hide all movies except the only we clicked on
     // maybe use find with the id parameter?
     // display (unhide?) movie info component
