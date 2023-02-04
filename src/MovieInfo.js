@@ -6,6 +6,7 @@ const MovieInfo = (props) => {
   const {title, poster_path, runtime, overview, tagline, revenue, release_date, average_rating, budget} = props.selectedMovie
   return (
     <div>
+      <button onClick={() => props.returnHome()} >Home</button>
       <h3>{title}</h3>
       <h4>{tagline}</h4>
       <h4>Runtime:{runtime}</h4>
