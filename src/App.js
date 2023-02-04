@@ -16,12 +16,7 @@ class App extends Component {
     }
   }
 
-  // if is laoding is true but errorMEssage is still empty, display your data is loading
-  // 
-
   componentDidMount() {
-
-
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
       .then(response => response.json())
       .then(data => {
@@ -70,16 +65,3 @@ class App extends Component {
 }
 
 export default App;
-
-//https://rancid-tomatillos.herokuapp.com/api/v2
-
-
-
-
-
-
-// fetch('http://localhost:3001/api/v1/ideas')
-// .then(response => response.json())
-// .then(data => {
-//   this.setState({ ideas: data, hasLoaded: true })
-// })
