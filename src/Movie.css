@@ -1,5 +1,5 @@
 img {
-    height: 250px;
+    height: 300px;
     width: 200px;
 }
 
@@ -9,7 +9,7 @@ img {
     flex-direction: column;
     flex-wrap: wrap;
     height: 35%;
-    margin: 3% 5% 3% 5%;
+    margin: 7% 6% 5% 9%;
     width: 10%;
 }
 
@@ -19,6 +19,11 @@ img {
 }
 
 .title-container {
-    height: 10vh;
+    height: 8vh;
     width: 15vw;
 }
+
+.font {
+    color: #E7F6F2;
+    font-size: 16px;
+  }
