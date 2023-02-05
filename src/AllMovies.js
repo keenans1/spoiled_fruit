@@ -3,7 +3,16 @@ import './AllMovies.css'
 import Movie from './Movie.js'
 
 const AllMovies = (props) => {
-  const movies = props.movies.map(movie => {
+  const sorted = props.movies.sort((a,b) => {
+    if(a.title < b.title) {
+      return -1
+    }
+    if(a.title > b.title) {
+      return 1
+    }
+    return 0
+  })
+  const movies = sorted.map(movie => {
     return (
       <Movie
         key={movie.id}
