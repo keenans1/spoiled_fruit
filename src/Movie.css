@@ -1,6 +1,6 @@
 img {
-    height: 200px;
-    width: 150px;
+    height: 250px;
+    width: 200px;
 }
 
 .movie-container {
@@ -8,12 +8,17 @@ img {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 20%;
-    margin: 5% 0% 0% 3%;
-    width: 20%;
+    height: 35%;
+    margin: 3% 5% 3% 5%;
+    width: 10%;
 }
 
 .movie-container:hover {
     cursor: pointer;
     transform: scale(1.05);
+}
+
+.title-container {
+    height: 10vh;
+    width: 15vw;
 }
