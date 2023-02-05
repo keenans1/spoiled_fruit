@@ -3,12 +3,14 @@ img {
     width: 150px;
 }
 
-.font {
-    font-size: 12px;
-}
-
 .movie-container {
-    margin: 1% 5% 1% 5%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 20%;
+    margin: 5% 0% 0% 3%;
+    width: 20%;
 }
 
 .movie-container:hover {
