@@ -1,15 +1,17 @@
 import React from 'react'
 import './Movie.css'
+import { NavLink } from 'react-router-dom'
 
 const Movie = (props) => {
-    const display = props.movieClicked ? 'hidden' : 'movie-container'
     return (
-      <div className={display} onClick={() => props.onClick(props.movie.id)}>
-        <div className='title-container'>
-          <h2 className="font title">{props.movie.title}</h2>
+      <NavLink to={`/movies/${props.movie.id}`} key={props.movie.id}>
+        <div className='movie-container'>
+          <div className='title-container'>
+            <h2 className="font title">{props.movie.title}</h2>
+          </div>
+            <img src={props.movie.poster_path} alt='movie poster' />
         </div>
-          <img src={props.movie.poster_path} alt='movie poster' />
-      </div>
+      </NavLink>
     )
 }
 

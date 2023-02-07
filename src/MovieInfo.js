@@ -1,7 +1,6 @@
 import React from 'react'
 import './MovieInfo.css'
 const MovieInfo = (props) => {
-  console.log('movie info props', props)
   const {title, poster_path, runtime, overview, tagline, revenue, release_date, average_rating, budget} = props.selectedMovie
   return (
     <div className='single-container'>
