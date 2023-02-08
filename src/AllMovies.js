@@ -16,13 +16,10 @@ const AllMovies = (props) => {
     return (
       <Movie
         key={movie.id}
-        onClick={props.onClick}
         movie={movie}
-        movieClicked={props.movieClicked}
       />
     )
   })
-
 
   return (
     <div className='movies-container'>

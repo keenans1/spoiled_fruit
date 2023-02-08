@@ -9,7 +9,6 @@ class App extends Component {
     super()
     this.state = {
       movies: [],
-      movieClicked: false,
       selectedMovie: null,
       errorMessage: '',
       isLoading: true
@@ -25,10 +24,10 @@ class App extends Component {
       .catch(err => this.setState({ errorMessage: err.message }))
   }
 
-  onClick = (id) => {
+  getMovie = (id) => {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
       .then(response => response.json())
-      .then(data => this.setState({ movieClicked: true, selectedMovie: data.movie})) 
+      .then(data => this.setState({selectedMovie: data.movie})) 
   }
 
   returnHome = () => {
@@ -38,7 +37,6 @@ class App extends Component {
   render() {
     return (
       <main className='App'>
-        {/* <NavLink to='/abc'>this is our button</NavLink> */}
         <header>
           <h1 className='header'>Spoiled Fruit</h1>
         </header>
@@ -51,14 +49,15 @@ class App extends Component {
           !this.state.isLoading && this.state.errorMessage ? <h2>{this.state.errorMessage}</h2> : null
         }
 
-            <Route exact path='/' render={() => <AllMovies movies={this.state.movies} />} ></Route>
-        
-
-
-        {this.state.movieClicked && 
-        <div className='info-container'>
-          <MovieInfo selectedMovie={this.state.selectedMovie} returnHome={this.returnHome}/>
-        </div>}
+        <Route exact path='/' render={() => <AllMovies movies={this.state.movies} />} ></Route>
+    
+        <Route path='/movies/:id' render={({ match }) => {
+          return (
+            <div className='info-container'>
+            <MovieInfo selectedMovie={this.state.selectedMovie} />
+            </div>
+          )
+        }} ></Route>
       </main>
     )
   }
