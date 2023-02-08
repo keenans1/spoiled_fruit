@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './MovieInfo.css'
+import { NavLink } from 'react-router-dom';
+
 class MovieInfo extends Component {
   constructor(props) {
     super(props)
@@ -17,7 +19,7 @@ class MovieInfo extends Component {
   }
 
   render() {
-    const { title, poster_path, runtime, overview, revenue, release_date, average_rating } = this.state.selectedMovie
+    const { id, title, poster_path, runtime, overview, revenue, release_date, average_rating } = this.state.selectedMovie
 
     return (
       <div className='single-container'>
@@ -28,12 +30,10 @@ class MovieInfo extends Component {
         <h4 className='font margin'>Overview: {overview}</h4>
         <h4 className='font margin'>Release Date: {release_date}</h4>
         <h4 className='font'>Revenue: ${revenue}</h4>
-
+        <NavLink to='/' key={id}><button className='button'> Home</button></NavLink>
       </div>
     )
   }
 }
 
 export default MovieInfo
-
-//<button className='button' onClick={() => props.returnHome()} >Home</button>
