@@ -42,6 +42,11 @@ describe('template spec', () => {
     cy.get('a[href="/movies/724495"]').should('exist')
     cy.get('a[href="/movies/1013860"]').should('exist')
   })
+
+  it('Should take a user to a different url endpoint and be shown that movie\'s info', () => {
+    cy.get('a[href="/movies/436270"]').click()
+  })
+
 })
 
 

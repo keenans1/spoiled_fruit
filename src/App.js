@@ -19,7 +19,6 @@ class App extends Component {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         this.setState({ movies: data.movies, isLoading: false })
       })
       .catch(err => this.setState({ errorMessage: err.message }))
@@ -28,11 +27,11 @@ class App extends Component {
   getMovie = (id) => {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
       .then(response => response.json())
-      .then(data => this.setState({selectedMovie: data.movie})) 
+      .then(data => this.setState({ selectedMovie: data.movie }))
   }
 
   returnHome = () => {
-    this.setState({movieClicked: false, selectedMovie: null})
+    this.setState({ movieClicked: false, selectedMovie: null })
   }
 
   render() {
@@ -51,11 +50,12 @@ class App extends Component {
         }
 
         <Route exact path='/' render={() => <AllMovies movies={this.state.movies} />} ></Route>
-    
+
         <Route path='/movies/:id' render={({ match }) => {
           return (
             <div className='info-container'>
-            <MovieInfo selectedMovie={this.state.selectedMovie} />
+              <MovieInfo movieID={match.params.id} />
+
             </div>
           )
         }} ></Route>
