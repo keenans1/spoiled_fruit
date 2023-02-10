@@ -3,6 +3,7 @@ import './App.css';
 import AllMovies from './AllMovies'
 import MovieInfo from './MovieInfo'
 import getMovies from './moviesApiCall'
+import Search from './Search';
 import { Route, NavLink } from 'react-router-dom'
 class App extends Component {
 
@@ -31,18 +32,19 @@ class App extends Component {
       <main className='App'>
         <header>
           <h1 className='header'>Spoiled Fruit</h1>
+          <form>
+            <input
+              type='text'
+              placeholder='Title'
+              name='title'
+              value={this.state.title}
+            />
+            <button>SEARCH</button>
+          </form>
         </header>
-
-        {
-          this.state.isLoading && !this.state.errorMessage ? <h2>Loading</h2> : null
-        }
-
-        {
-          !this.state.isLoading && this.state.errorMessage ? <h2>{this.state.errorMessage}</h2> : null
-        }
-
+        {this.state.isLoading && !this.state.errorMessage ? <h2>Loading</h2> : null}
+        {!this.state.isLoading && this.state.errorMessage ? <h2>{this.state.errorMessage}</h2> : null}
         <Route exact path='/' render={() => <AllMovies movies={this.state.movies} />} ></Route>
-
         <Route path='/movies/:id' render={({ match }) => {
           return (
             <div className='info-container'>
