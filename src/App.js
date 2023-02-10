@@ -30,7 +30,28 @@ class App extends Component {
   }
 
   handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
+    this.setState({ [event.target.name]: event.target.value })
+    if(this.state.movieTitle) {
+      const lowerCase = this.state.movieTitle.toLowerCase()
+      const changeAll = this.state.movies.map(movie =>  {
+        movie.title = movie.title.toLowerCase()
+        return movie
+      })
+      const filtered = changeAll.filter(movie => movie.title.includes(lowerCase))
+  
+      this.setState({filteredMovies: filtered }) 
+    }  else {
+      this.clearInputs()
+    }  
+
+    //"All Quiet on the Western Front"
+    // check for upper/lower case
+    // string letters together for filter
+    //if search length is 0, display all movies 
+  }
+
+  clearInputs = () => {
+    this.setState({filteredMovies: [], movieTitle: ''})
   }
 
   render() {
