@@ -54,8 +54,8 @@ class App extends Component {
     //if search length is 0, display all movies
     return (
       <main className='App'>
-        <header>
-          <h1 className='header'>Spoiled Fruit</h1>
+        <header className='header'>
+          <h1 className='title'>Spoiled Fruit</h1>
           <form>
             <input
               type='text'
