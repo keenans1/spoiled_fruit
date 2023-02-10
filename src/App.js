@@ -3,7 +3,7 @@ import './App.css';
 import AllMovies from './AllMovies'
 import MovieInfo from './MovieInfo'
 import getMovies from './moviesApiCall'
-import Search from './Search';
+//import Search from './Search';
 import { Route, NavLink } from 'react-router-dom'
 class App extends Component {
 
@@ -30,31 +30,28 @@ class App extends Component {
   }
 
   handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value })
-    if(this.state.movieTitle) {
-      const lowerCase = this.state.movieTitle.toLowerCase()
-      const changeAll = this.state.movies.map(movie =>  {
-        movie.title = movie.title.toLowerCase()
-        return movie
-      })
-      const filtered = changeAll.filter(movie => movie.title.includes(lowerCase))
-  
-      this.setState({filteredMovies: filtered }) 
-    }  else {
-      this.clearInputs()
-    }  
-
-    //"All Quiet on the Western Front"
-    // check for upper/lower case
-    // string letters together for filter
-    //if search length is 0, display all movies 
+    this.setState({ movieTitle: event.target.value })
   }
 
-  clearInputs = () => {
-    this.setState({filteredMovies: [], movieTitle: ''})
+  handleClick = (event) => {
+    event.preventDefault()
+    if (this.state.movieTitle) {
+      const lowerCaseSearch = this.state.movieTitle.toLowerCase()
+      const filtered = this.state.movies
+        .filter(movie => {
+          const lowerCaseTitle = movie.title.toLowerCase()
+          if (lowerCaseTitle.includes(lowerCaseSearch)) {
+            return movie
+          }
+        })
+      this.setState({ filteredMovies: filtered })
+    } else {
+      this.setState({ filteredMovies: [] })
+    }
   }
 
   render() {
+    //if search length is 0, display all movies
     return (
       <main className='App'>
         <header>
@@ -65,8 +62,9 @@ class App extends Component {
               placeholder='Search'
               name='movieTitle'
               value={this.state.movieTitle}
-              onChange={event => this.handleChange(event)}
+              onChange={(event) => this.handleChange(event)}
             />
+            <button onClick={(event) => this.handleClick(event)}>Search</button>
           </form>
         </header>
         {this.state.isLoading && !this.state.errorMessage ? <h2>Loading</h2> : null}
