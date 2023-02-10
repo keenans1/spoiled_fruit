@@ -17,20 +17,29 @@ class MovieInfo extends Component {
     .then(data => this.setState({ selectedMovie: data.movie }))
     .catch(err => console.log({errorMessage: err.message}))
   }
-
+        // <div className='image-container'>
+        //   <img className='font margin' src={poster_path} alt={title} />
+        // </div>
+  
   render() {
-    const { id, title, poster_path, runtime, overview, revenue, release_date, average_rating } = this.state.selectedMovie
-
+    const { id, title, poster_path, runtime, overview, revenue, release_date, average_rating, backdrop_path } = this.state.selectedMovie
+    const selected = {
+      backgroundImage: `url(${this.state.selectedMovie.backdrop_path})`,
+      height: '100vh',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat'
+    }
     return (
-      <div className='single-container'>
-        <h3 className='font movie-title'>{title}</h3>
-        <img className='font margin' src={poster_path} alt={title} />
-        <h4 className='font'>Runtime: {runtime} minutes</h4>
-        <h4 className='font margin'>Rating: {average_rating}/10</h4>
-        <h4 className='font margin'>Overview: {overview}</h4>
-        <h4 className='font margin'>Release Date: {release_date}</h4>
-        <h4 className='font'>Revenue: ${revenue}</h4>
-        <NavLink to='/' key={id}><button className='button'> Home</button></NavLink>
+      <div className='single-container' style={selected}>
+        <div className='details-container'>
+          <h3 className='movie-title'>{title}</h3>
+          <h4 className='font'>Runtime: {runtime} minutes</h4>
+          <h4 className='font'>Overview: {overview}</h4>
+          <h4 className='font'>Release Date: {release_date}</h4>
+          <div className='button-container'>
+            <NavLink to='/' key={id}><button className='button'> Home</button></NavLink>
+          </div>
+        </div>
       </div>
     )
   }
