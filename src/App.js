@@ -13,7 +13,9 @@ class App extends Component {
       movies: [],
       selectedMovie: null,
       errorMessage: '',
-      isLoading: true
+      isLoading: true,
+      filteredMovies: [],
+      movieTitle: ''
     }
   }
 
@@ -27,6 +29,10 @@ class App extends Component {
     this.setState({ movieClicked: false, selectedMovie: null })
   }
 
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  }
+
   render() {
     return (
       <main className='App'>
@@ -35,11 +41,11 @@ class App extends Component {
           <form>
             <input
               type='text'
-              placeholder='Title'
-              name='title'
-              value={this.state.title}
+              placeholder='Search'
+              name='movieTitle'
+              value={this.state.movieTitle}
+              onChange={event => this.handleChange(event)}
             />
-            <button>SEARCH</button>
           </form>
         </header>
         {this.state.isLoading && !this.state.errorMessage ? <h2>Loading</h2> : null}
