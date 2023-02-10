@@ -6,13 +6,14 @@
 }
 
 .header {
-  background: #395B64 ;
-  color: #E7F6F2;
-  font-size: 50px;
+  background: #395B64;
+  display: flex;
+  justify-content: space-around;
   height: 8vh;
   margin: 0;
   padding: 1%;
   width: 100vw;
+  /* padding: 0% 5% 0% 5%; */
 }
 
 .info-container {
@@ -22,7 +23,31 @@
   height: 100%;
 }
 
-.App-header {
+.title {
+  color: #E7F6F2;
+  font-size: 50px;
+  margin: 0% 0% 5% 5%;
+}
+
+form {
+  margin: 1% 0% 0% 5%;
+  display: flex;
+}
+
+input {
+  height: 50%;
+  width: 20vw;
+}
+
+button {
+  background-color: #E7F6F2;
+  height: 60%;
+  width: 25%;
+}
+
+
+
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -31,7 +56,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 /* this was here before */
 /* .App-logo {
