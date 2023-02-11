@@ -5,10 +5,15 @@
   text-align: center;
 }
 
+.home {
+  margin: 1% 0% 0% 0%;
+  width: 5vw;
+}
+
 .header {
   background: #395B64;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   height: 8vh;
   margin: 0;
   padding: 1%;

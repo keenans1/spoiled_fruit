@@ -3,10 +3,6 @@
   font-size: 12px;
 }
 
-.hidden {
-  display: none;
-}
-
 .movies-container {
   display: flex;
   flex-direction: row;
