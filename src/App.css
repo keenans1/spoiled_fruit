@@ -50,6 +50,11 @@ button {
   width: 25%;
 }
 
+.noMoviesError {
+  height: 100vh;
+  color: white;
+}
+
 
 
 /* .App-header {
