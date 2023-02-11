@@ -3,7 +3,6 @@ import './App.css';
 import AllMovies from './AllMovies'
 import MovieInfo from './MovieInfo'
 import getMovies from './moviesApiCall'
-//import Search from './Search';
 import { Route, NavLink } from 'react-router-dom'
 class App extends Component {
 
@@ -48,6 +47,7 @@ class App extends Component {
     } else {
       this.setState({ filteredMovies: [] })
     }
+    this.setState({movieClicked: false, selectedMovie: null})
   }
 
   render() {
@@ -55,7 +55,9 @@ class App extends Component {
     return (
       <main className='App'>
         <header className='header'>
-          <button className='home' onClick={() => this.setState({filteredMovies: [], movieTitle: ''})}>Home</button>
+          <div className='button-container'>
+            <NavLink to='/'><button className='button' onClick={() => this.setState({filteredMovies: [], movieTitle: '', movieClicked: false, selectedMovie: null})}>Home</button></NavLink>
+          </div>
           <h1 className='title'>Spoiled Fruit</h1>
           <form>
             <input
@@ -65,7 +67,7 @@ class App extends Component {
               value={this.state.movieTitle}
               onChange={(event) => this.handleChange(event)}
             />
-            <button onClick={(event) => this.handleClick(event)}>Search</button>
+            <NavLink to='http://localhost:3000'><button onClick={(event) => this.handleClick(event)}>Search</button></NavLink>
           </form>
         </header>
         {this.state.isLoading && !this.state.errorMessage ? <h2>Loading</h2> : null}
