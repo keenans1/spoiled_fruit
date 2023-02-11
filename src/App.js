@@ -55,7 +55,7 @@ class App extends Component {
     return (
       <main className='App'>
         <header className='header'>
-          <button className='home'>Home</button>
+          <button className='home' onClick={() => this.setState({filteredMovies: [], movieTitle: ''})}>Home</button>
           <h1 className='title'>Spoiled Fruit</h1>
           <form>
             <input
