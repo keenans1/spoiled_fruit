@@ -69,7 +69,9 @@ class App extends Component {
         </header>
         {this.state.isLoading && !this.state.errorMessage ? <h2>Loading</h2> : null}
         {!this.state.isLoading && this.state.errorMessage ? <h2>{this.state.errorMessage}</h2> : null}
+        {this.state.filteredMovies.length > 0 ? <Route exact path='/' render={() => <AllMovies movies={this.state.filteredMovies} />} ></Route> :
         <Route exact path='/' render={() => <AllMovies movies={this.state.movies} />} ></Route>
+         }
         <Route path='/movies/:id' render={({ match }) => {
           return (
             <div className='info-container'>
