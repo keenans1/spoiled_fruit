@@ -44,7 +44,7 @@ input {
   width: 20vw;
 }
 
-button {
+.home-button {
   background-color: #E7F6F2;
   height: 60%;
   width: 25%;
