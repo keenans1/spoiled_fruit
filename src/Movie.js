@@ -7,17 +7,19 @@ const Movie = (props) => {
   const { id, title, poster_path } = props.movie
   return (
     <NavLink to={`/movies/${id}`} key={id}>
-      <div>
-        <div className='title-container'>
-          <h2 className="font">{title}</h2>
-        </div>
-        <img src={poster_path} alt='movie poster' />
-      </div>
+      <img src={poster_path} alt='movie poster' />
     </NavLink>
   )
 }
 
 export default Movie
+
+{/* <div>
+<div className='title-container'>
+  <h2 className="font">{title}</h2>
+</div>
+<img src={poster_path} alt='movie poster' />
+</div> */}
 
 // delete movieData.js file
 // probably delete setUpTests.js file

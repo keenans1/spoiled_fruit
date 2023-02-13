@@ -1,1 +1,28 @@
-.search-button {}
+.search-button {
+    margin: 0px;
+    padding: 0px;
+    background-color: #E7F6F2;
+    height: 10vh;
+    width: 8vw;
+    border-radius: 5%;
+}
+
+.search-button-disabled {
+    margin: 0px;
+    padding: 0px;
+    height: 4vh;
+    width: 8vw;
+    border-radius: 5%;
+}
+
+form {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: baseline;
+}
+
+input {
+    margin: 0px;
+    padding: 0px;
+}
