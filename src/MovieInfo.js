@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './MovieInfo.css'
 import { NavLink } from 'react-router-dom';
 import getSingleMovie from './singleMovieApiCall'
+import PropTypes from 'prop-types'
 
 class MovieInfo extends Component {
   constructor(props) {
@@ -14,13 +15,13 @@ class MovieInfo extends Component {
 
   componentDidMount() {
     getSingleMovie(this.props.movieID)
-    .then(data => this.setState({ selectedMovie: data.movie }))
-    .catch(err => console.log({errorMessage: err.message}))
+      .then(data => this.setState({ selectedMovie: data.movie }))
+      .catch(err => console.log({ errorMessage: err.message }))
   }
-        // <div className='image-container'>
-        //   <img className='font margin' src={poster_path} alt={title} />
-        // </div>
-  
+  // <div className='image-container'>
+  //   <img className='font margin' src={poster_path} alt={title} />
+  // </div>
+
   render() {
     const { id, title, poster_path, runtime, overview, revenue, release_date, average_rating, backdrop_path } = this.state.selectedMovie
     const selected = {
@@ -43,3 +44,10 @@ class MovieInfo extends Component {
 }
 
 export default MovieInfo
+
+// delete unused variables
+// delete all unused imports
+
+MovieInfo.propTypes = {
+  movieID: PropTypes.number.isRequired
+}
