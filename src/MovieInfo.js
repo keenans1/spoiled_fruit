@@ -11,15 +11,11 @@ class MovieInfo extends Component {
     }
   }
 
-
   componentDidMount() {
     getSingleMovie(this.props.movieID)
       .then(data => this.setState({ selectedMovie: data.movie }))
       .catch(err => console.log({ errorMessage: err.message }))
   }
-  // <div className='image-container'>
-  //   <img className='font margin' src={poster_path} alt={title} />
-  // </div>
 
   render() {
     const { title, runtime, overview, release_date } = this.state.selectedMovie
@@ -44,9 +40,6 @@ class MovieInfo extends Component {
 
 export default MovieInfo
 
-// delete unused variables
-// delete all unused imports
-
 MovieInfo.propTypes = {
-  movieID: PropTypes.number.isRequired
+  movieID: PropTypes.string.isRequired
 }
