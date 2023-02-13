@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import PropTypes from 'prop-types'
 
 class Search extends Component {
   constructor(props) {
@@ -42,3 +43,9 @@ class Search extends Component {
 }
 
 export default Search
+
+// maybe delete clearInputs and just call set state in the onClick function directly instead
+
+Search.propTypes = {
+  handleClick: PropTypes.func.isRequired
+}
