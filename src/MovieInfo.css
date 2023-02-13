@@ -1,0 +1,36 @@
+.font {
+  color: #E7F6F2;
+  font-size: 16px;
+  margin: 3;
+}
+
+.single-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 30%
+}
+
+.movie-title {
+  font-size: 30px;
+  margin: 7% 0% 4% 0%;
+}
+
+.margin {
+  margin-bottom: 1%;
+}
+
+.button {
+  border: none;
+  border-radius: 5%;
+  height: 4vh;
+  margin: 10% 0% 10% 0%;
+  width: 6vw;
+}
+
+.button:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+}

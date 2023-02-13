@@ -1,4 +1,5 @@
 .font {
+  color: #E7F6F2;
   font-size: 12px;
 }
 
@@ -7,8 +8,9 @@
 }
 
 .movies-container {
-  margin-left: 5%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: 0;
+  width: 90%;
 }
