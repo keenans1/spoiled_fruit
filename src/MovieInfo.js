@@ -36,9 +36,6 @@ class MovieInfo extends Component {
           <h4 className='font'>Runtime: {runtime} minutes</h4>
           <h4 className='font'>Overview: {overview}</h4>
           <h4 className='font'>Release Date: {release_date}</h4>
-          <div className='button-container'>
-            <NavLink to='/' key={id}><button className='button'> Home</button></NavLink>
-          </div>
         </div>
       </div>
     )
