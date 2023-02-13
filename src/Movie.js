@@ -4,13 +4,14 @@ import { NavLink } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 const Movie = (props) => {
+  const { id, title, poster_path } = props.movie
   return (
-    <NavLink to={`/movies/${props.movie.id}`} key={props.movie.id}>
+    <NavLink to={`/movies/${id}`} key={id}>
       <div>
         <div className='title-container'>
-          <h2 className="font">{props.movie.title}</h2>
+          <h2 className="font">{title}</h2>
         </div>
-        <img src={props.movie.poster_path} alt='movie poster' />
+        <img src={poster_path} alt='movie poster' />
       </div>
     </NavLink>
   )
@@ -18,7 +19,6 @@ const Movie = (props) => {
 
 export default Movie
 
-// destructure props
 // delete movieData.js file
 // probably delete setUpTests.js file
 

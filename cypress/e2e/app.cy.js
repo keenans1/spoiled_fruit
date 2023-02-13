@@ -105,5 +105,4 @@ describe('template spec', () => {
 
 
 // user flows ->
-  // when i make a search, and there are no results, i should see an error
   // when there is no input in the search bar, i should not be able to click the search button

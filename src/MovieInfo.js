@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './MovieInfo.css'
-import { NavLink } from 'react-router-dom';
 import getSingleMovie from './singleMovieApiCall'
 import PropTypes from 'prop-types'
 
@@ -23,7 +22,7 @@ class MovieInfo extends Component {
   // </div>
 
   render() {
-    const { id, title, poster_path, runtime, overview, revenue, release_date, average_rating, backdrop_path } = this.state.selectedMovie
+    const { title, runtime, overview, release_date } = this.state.selectedMovie
     const selected = {
       backgroundImage: `url(${this.state.selectedMovie.backdrop_path})`,
       height: '100vh',

@@ -42,7 +42,7 @@ class App extends Component {
       <main className='App'>
         <header className='header'>
           <div className='button-container'>
-            <NavLink to='/'><button className='button' onClick={() => this.setState({ filteredMovies: [], movieTitle: '', movieClicked: false, selectedMovie: null })}>Home</button></NavLink>
+            <NavLink to='/'><button className='home-button' onClick={() => this.setState({ filteredMovies: [], movieTitle: '', movieClicked: false, selectedMovie: null })}>Home</button></NavLink>
           </div>
           <h1 className='title'>Spoiled Fruit</h1>
           <Search handleClick={this.handleClick} />
@@ -51,7 +51,7 @@ class App extends Component {
         {!this.state.isLoading && this.state.errorMessage ? <h2>{this.state.errorMessage}</h2> : null}
         {this.state.filteredMovies.length > 0 && <Route exact path='/' render={() => <AllMovies movies={this.state.filteredMovies} />} ></Route>}
         {!this.state.movieTitle && this.state.filteredMovies.length === 0 && <Route exact path='/' render={() => <AllMovies movies={this.state.movies} />} ></Route>}
-        {this.state.movieTitle && this.state.filteredMovies.length === 0 && <h2 className='noMoviesError'>oopsy</h2>}
+        {this.state.movieTitle && this.state.filteredMovies.length === 0 && <h2 className='noMoviesError'>Sorry, no results match your search. Please try another search or click the Home button.</h2>}
         <Route path='/movies/:id' render={({ match }) => {
           return (
             <div className='info-container'>
@@ -65,3 +65,7 @@ class App extends Component {
 }
 
 export default App
+
+// refactor error/no movies available page
+// if the url is bad, a blank screen is shown
+// what if the api is broke? what page will display.. what is no movies are fetched, what if a single movie isnt fetched

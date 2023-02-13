@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import React, { Component } from "react"
+import { NavLink } from "react-router-dom"
 import PropTypes from 'prop-types'
+import './Search.css'
 
 class Search extends Component {
   constructor(props) {
@@ -14,10 +15,6 @@ class Search extends Component {
     this.setState({ movieTitle: event.target.value })
   }
 
-  clearInputs = () => {
-    this.setState({ movieTitle: '' })
-  }
-
   render() {
     return (
       <form>
@@ -28,23 +25,16 @@ class Search extends Component {
           value={this.state.movieTitle}
           onChange={(event) => this.handleChange(event)}
         />
-        {
-          this.state.movieTitle ? <NavLink to='/'><button onClick={() => {
-            this.props.handleClick(this.state.movieTitle)
-            this.clearInputs()
-          }}>Search</button></NavLink>
-
-
-            : <button disabled>Search</button>
-        }
+        {this.state.movieTitle ? <NavLink to='/'><button className='search-button' onClick={() => {
+          this.props.handleClick(this.state.movieTitle)
+          this.setState({ movieTitle: '' })
+        }}>Search</button></NavLink> : <button disabled>Search</button>}
       </form>
     )
   }
 }
 
 export default Search
-
-// maybe delete clearInputs and just call set state in the onClick function directly instead
 
 Search.propTypes = {
   handleClick: PropTypes.func.isRequired
