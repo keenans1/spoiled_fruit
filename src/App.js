@@ -55,7 +55,6 @@ class App extends Component {
           return (
             <div className='info-container'>
               <MovieInfo movieID={match.params.id} />
-
             </div>
           )
         }} ></Route>

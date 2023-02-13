@@ -12,7 +12,6 @@ class MovieInfo extends Component {
 
 
   componentDidMount() {
-    console.log('movie info props', this.props)
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.movieID}`)
       .then(response => response.json())
       .then(data => this.setState({ selectedMovie: data.movie }))
