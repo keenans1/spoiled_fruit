@@ -28,7 +28,7 @@ class Search extends Component {
         {this.state.movieTitle ? <NavLink to='/'><button className='search-button' onClick={() => {
           this.props.handleClick(this.state.movieTitle)
           this.setState({ movieTitle: '' })
-        }}>Search</button></NavLink> : <button disabled>Search</button>}
+        }}>Search</button></NavLink> : <button className='search-button-disabled' disabled>Search</button>}
       </form>
     )
   }

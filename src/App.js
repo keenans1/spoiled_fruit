@@ -38,6 +38,22 @@ class App extends Component {
   }
 
   render() {
+    let display;
+    if (this.state.isLoading && !this.state.errorMessage) {
+      display = <h2>Loading</h2>
+    } else if (!this.state.isLoading && this.state.errorMessage) {
+      display = <h2>{this.state.errorMessage}</h2>
+    }
+    else if (this.state.filteredMovies.length > 0) {
+      display = <Route exact path='/' render={() => <AllMovies movies={this.state.filteredMovies} />} ></Route>
+    }
+    else if (!this.state.movieTitle && this.state.filteredMovies.length === 0) {
+      display = <Route exact path='/' render={() => <AllMovies movies={this.state.movies} />} ></Route>
+    }
+    else if (this.state.movieTitle && this.state.filteredMovies.length === 0) {
+      display = <h2 className='noMoviesError'>Sorry, no results match your search. Please try another search or click the Home button.</h2>
+    }
+
     return (
       <main className='App'>
         <header className='header'>
@@ -47,11 +63,7 @@ class App extends Component {
           <h1 className='title'>Spoiled Fruit</h1>
           <Search handleClick={this.handleClick} />
         </header>
-        {this.state.isLoading && !this.state.errorMessage ? <h2>Loading</h2> : null}
-        {!this.state.isLoading && this.state.errorMessage ? <h2>{this.state.errorMessage}</h2> : null}
-        {this.state.filteredMovies.length > 0 && <Route exact path='/' render={() => <AllMovies movies={this.state.filteredMovies} />} ></Route>}
-        {!this.state.movieTitle && this.state.filteredMovies.length === 0 && <Route exact path='/' render={() => <AllMovies movies={this.state.movies} />} ></Route>}
-        {this.state.movieTitle && this.state.filteredMovies.length === 0 && <h2 className='noMoviesError'>Sorry, no results match your search. Please try another search or click the Home button.</h2>}
+        {display}
         <Route path='/movies/:id' render={({ match }) => {
           return (
             <div className='info-container'>

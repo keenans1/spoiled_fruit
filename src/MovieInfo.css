@@ -4,7 +4,6 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   height: 100vh;
-  margin-top: 5%;
   width: 100vw;
 }
 
@@ -26,7 +25,7 @@ image-container {
 .details-container {
   align-items: flex-start;
   background: rgba(0, 0, 0, 0.5);
-  display:flex;
+  display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
