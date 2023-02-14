@@ -13,6 +13,7 @@ const AllMovies = (props) => {
     }
     return 0
   })
+
   const movies = sorted.map(movie => {
     return (
       <Movie
@@ -32,12 +33,8 @@ const AllMovies = (props) => {
 export default AllMovies
 
 AllMovies.propTypes = {
-
-
   movies: PropTypes.arrayOf(
-
     PropTypes.shape(
-
       {
         id: PropTypes.number.isRequired,
         poster_path: PropTypes.string,
@@ -47,27 +44,5 @@ AllMovies.propTypes = {
         release_date: PropTypes.string
       }
     )
-
-
   )
-
-
-
-  // Pokemon.propTypes = {
-  //   pokemon: PropTypes.shape({
-  //     name: PropTypes.string,
-  //     id: PropTypes.number,
-  //     base_stamina: PropTypes.number,
-  //     base_defense: PropTypes.number
-  //   })
-  // }
-
-
-  // id: PropTypes.number.isRequired,
-  // poster_path: PropTypes.string,
-  // backdrop_path: PropTypes.string,
-  // title: PropTypes.string.isRequired,
-  // average_rating: PropTypes.number,
-  // release_date: PropTypes.string
-
 }
