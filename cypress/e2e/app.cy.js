@@ -102,7 +102,3 @@ describe('template spec', () => {
   })
 
 })
-
-
-// user flows ->
-  // when there is no input in the search bar, i should not be able to click the search button

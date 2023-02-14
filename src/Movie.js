@@ -14,16 +14,6 @@ const Movie = (props) => {
 
 export default Movie
 
-{/* <div>
-<div className='title-container'>
-  <h2 className="font">{title}</h2>
-</div>
-<img src={poster_path} alt='movie poster' />
-</div> */}
-
-// delete movieData.js file
-// probably delete setUpTests.js file
-
 Movie.propTypes = {
   movie: PropTypes.shape({
     id: PropTypes.number.isRequired,

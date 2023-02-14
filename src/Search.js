@@ -16,6 +16,18 @@ class Search extends Component {
   }
 
   render() {
+
+    let searchButton;
+
+    if (this.state.movieTitle) {
+      searchButton = <NavLink to='/'><button className='search-button' onClick={() => {
+        this.props.handleClick(this.state.movieTitle)
+        this.setState({ movieTitle: '' })
+      }}>Search</button></NavLink>
+    } else {
+      searchButton = <button className='search-button-disabled' disabled>Search</button>
+    }
+
     return (
       <form>
         <input
@@ -25,10 +37,7 @@ class Search extends Component {
           value={this.state.movieTitle}
           onChange={(event) => this.handleChange(event)}
         />
-        {this.state.movieTitle ? <NavLink to='/'><button className='search-button' onClick={() => {
-          this.props.handleClick(this.state.movieTitle)
-          this.setState({ movieTitle: '' })
-        }}>Search</button></NavLink> : <button className='search-button-disabled' disabled>Search</button>}
+        {searchButton}
       </form>
     )
   }
