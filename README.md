@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Spoiled Fruit Overview
+This app aims to making deciding on a movie to watch easier by showing users available movies in alphabetical order. Once a user clicks on a movie, they can find out more, such as the run time, rating and overview. If a user knows the title of a movie they want to find out more about, they can search that title in our serach bar and all the title's that contain the search input will appear and the user can click their desired movie from that page, return home or make another search. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Setup Instructions
+1. In your browser, paste this link: https://github.com/keenans1/spoiled_fruit
+2. Once you have cloned the repo, change into the directory and install the project dependencies. Run `npm install` to install project dependencies.
+3. Run `npm start` and the page will automatically open in the browser while your local server runs.  
 
-## Available Scripts
+## Collaborators
+* [Angie Wirth](https://github.com/awirth224)
+* [Keenan Southall](https://github.com/keenans1)
 
-In the project directory, you can run:
+## Technologies Used 
+* React
+* Javascript
+* Cypress
+* HTML
+* CSS
+* NPM
+* Github
+* VScode
 
-### `npm start`
+## Future Features
+A future feature we would like to include is the ability for a user to filter by rating or genre.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## GIF
+https://media.giphy.com/media/A1UYoA8az68IQQ0SQO/giphy.gif
